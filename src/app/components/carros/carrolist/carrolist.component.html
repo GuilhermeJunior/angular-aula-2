@@ -34,7 +34,7 @@
                   <a href="#" routerLink="/admin/carros/edit/{{ carro.id }}">
                     <i class="fas fa-pen"></i>
                   </a>
-                  <a href="#" (click)="deletar()" style="color: red;" class="ms-2">
+                  <a href="#" (click)="deleteById(carro); $event.preventDefault()" style="color: red;" class="ms-2">
                     <i class="fas fa-trash"></i>
                   </a>
                 </td>
