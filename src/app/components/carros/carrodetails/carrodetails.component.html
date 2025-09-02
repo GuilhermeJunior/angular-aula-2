@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="align-self-center">
+    <div class="card" data-mdb-card-init>
+      <div class="card-body">
+        <h3 class="justify-content-center">Cadastro de Carro</h3>
+        <br>
+        <div class="form-outline justify-content-center" data-mdb-input-init>
+          <input [(ngModel)]="carro.nome" type="text" id="nome" class="form-control" />
+          <label class="form-label" for="nome">Nome</label>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-primary btn-rounded"
+            data-mdb-ripple-init
+            (click)="salvar()"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

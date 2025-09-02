@@ -1,0 +1,50 @@
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>Listagem de Carros</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
+                <th>
+                  <a
+                    class="btn text-white btn-lg btn-floating"
+                    data-mdb-ripple-init
+                    href="#!"
+                    routerLink="/admin/carros/new"
+                    style="background-color: #3b5998;"
+                    role="button"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </a>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (carro of lista; track $index) {
+              <tr>
+                <td>{{ carro.id }}</td>
+                <td>{{ carro.nome }}</td>
+                <td>
+                  <a href="#" routerLink="/admin/carros/edit/{{ carro.id }}">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                  <a href="#" (click)="deletar()" style="color: red;" class="ms-2">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+                <td></td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
