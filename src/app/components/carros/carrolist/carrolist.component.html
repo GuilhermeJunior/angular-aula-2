@@ -16,7 +16,7 @@
                     class="btn text-white btn-lg btn-floating"
                     data-mdb-ripple-init
                     href="#!"
-                    routerLink="/admin/carros/new"
+                    (click)="new(); $event.preventDefault()"
                     style="background-color: #3b5998;"
                     role="button"
                   >
@@ -31,7 +31,7 @@
                 <td>{{ carro.id }}</td>
                 <td>{{ carro.nome }}</td>
                 <td>
-                  <a href="#" routerLink="/admin/carros/edit/{{ carro.id }}">
+                  <a href="#"  (click)="edit(carro); $event.preventDefault()">
                     <i class="fas fa-pen"></i>
                   </a>
                   <a href="#" (click)="deleteById(carro); $event.preventDefault()" style="color: red;" class="ms-2">
@@ -48,3 +48,19 @@
     </div>
   </div>
 </div>
+
+<ng-template #modalCarroDetalhe>
+  <div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Cadastro Carro</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modalRef.close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <h1></h1>
+  <app-carrodetails [carro]="carroEdit" (retorno)="retornoDetalhe($event)"></app-carrodetails>
+</div>
+</ng-template>
